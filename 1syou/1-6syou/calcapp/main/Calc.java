@@ -1,3 +1,7 @@
+package calcapp.main;
+// import calcapp.logics.CalcLogic;
+import calcapp.logics.*;
+
 public class Calc {
   public static void main(String[] args) {
     int a = 10;
@@ -6,5 +10,6 @@ public class Calc {
     int hiku  = CalcLogic.hiku(a, b);
 
     System.out.println("足し算" + total + "引き算" + hiku);
+    // System.out.println("足し算");
   }
 }
