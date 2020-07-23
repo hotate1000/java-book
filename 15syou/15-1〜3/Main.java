@@ -49,5 +49,23 @@ public class Main {
     System.out.println("文字を小文字から大文字に変更する" + s41.toUpperCase());
     System.out.println("スペースを削除する" + s41.trim());
     System.out.println(s41.replace("ing","消し"));
+
+    char[] data1 = s41.toCharArray();
+    System.out.println(data1);
+    char[] data2 = s41.getBytes();
+    System.out.println(data2);
+
+
+
+
+    StringBuilder sb = new StringBuilder();
+    // for (int i = 0; i < 10; i++) {
+    //   sb.append("Java");
+    // }
+    sb.append("test");
+    sb.append("ppp");
+    sb.append("ooo");
+    String s = sb.toString();
+    System.out.println(s);
   }
 }
