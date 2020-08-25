@@ -1,18 +1,24 @@
 public class Hero {
-  String name;
   int hp;
-  Sword sword;
+  String name;
+  Sword sw;
+
 
   public void attack() {
-    sword = new Sword();
-    // sword.name = "火の剣";
-    this.name = "にんじんマン";
-    System.out.println(this.hp + "は、攻撃した。");
-    System.out.println("敵にダメージを与えた。");
-    System.out.println(this.name + "は、" + sword.name + "で攻撃した。");
+    System.out.println(this.name + "は攻撃した！");
+    System.out.println("敵に5ポイントのダメージ");
+    System.out.println(this.name + "は" + sw.name + "で攻撃した");
+  }
+
+  public Hero(String name) {
+    this.hp   = 100;
+    this.name = name;
   }
 
   public Hero() {
     this.hp = 100;
+    this.name = "ダミー";
   }
+
+
 }
