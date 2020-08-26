@@ -1,20 +1,27 @@
 public class PoisonMatango extends Matango {
-  int poisonAttack = 5;
+  int hp;
+  char suffixPm;
+  int poisona = 5;
 
-  public PoisonMatango(char suffix) {
-    super.(suffix);
+  public PoisonMatango(char suffixPm) {
+    super(suffixPm);
   }
-  puvlic void attack(Hero h) {
+  public PoisonMatango() {
+    super('z');
+  }
+
+  public void attack(Hero h) {
     super.attack(h);
-    if(this.poisonAttack > 0) {
+    // System.out.println("毒攻撃開始");
 
-      System.out.println("さらに毒の胞子をばらまいた！");
-      int dmg = h.hp / 5;
-      h.hp -= dmg;
-      System.out.println(dmg + "ポイントのダメージをあたえた！");
-      this.poisonAttack--;
-    } 
+    if(this.poisona <= 5 && this.poisona > 0) {
+      System.out.println("さらに毒攻撃を行った");
+      int a = h.hp / 5;
+      h.hp = h.hp - a;
+      System.out.println(a + "ポイントのダメージを受けた");
+      System.out.println(h.name + "の残りhpは" + h.hp);
+      this.poisona = this.poisona - 1;
+
+    }  
   }
-
-  
 }
