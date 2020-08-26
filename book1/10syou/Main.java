@@ -1,9 +1,14 @@
 public class Main {
   public static void main(String[] args) {
-    Hero h = new Hero();
-    h.run();
+    Hero hero = new Hero();
+    hero.attack(10);
+    hero.run();
 
-    SuperHero sh = new SuperHero();
-    sh.run();
+
+    SuperHero sHero = new SuperHero();
+    sHero.run();
+    sHero.fly();
+
+    hero.run();
   }
 }
