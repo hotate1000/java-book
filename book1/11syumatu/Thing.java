@@ -1,4 +1,4 @@
 public interface Thing {
-  double getWeight();
-  void setWeight(double weight);
+  public abstract double getWeight();
+  public abstract void   setWeight(double weight);
 }

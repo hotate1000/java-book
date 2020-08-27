@@ -1,4 +1,4 @@
-public class Book extends TangibleAsset{
+public class Book extends TangibleAsset {
   // String name;
   // int    price;
   // String color;
@@ -8,12 +8,12 @@ public class Book extends TangibleAsset{
     // this.name  = name;
     // this.price = price;
     // this.color = color;
+    super(name, price, color);
     this.isbn  = isbn;
   }
 
-  public String getIsbn() {return this.isbn;}
-  // public String getName() {return this.name;}
-  // public int getPrice() {return this.price;}
-  // public String getColor() {return this.isbn}
-
-}
+  // public String getName()  {return this.name;}
+  // public int    getPrice() {return this.price;}
+  // public String getColor() {return this.color;}
+  public String getIsbn()  {return this.isbn;}
+} 
