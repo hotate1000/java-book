@@ -2,46 +2,46 @@ public class Wizard {
   private int hp;
   private int mp;
   private String name;
-  private Wand wond;
+  private Wand wand;
 
   public void heal(Hero h) {
     int basePoint = 10;
-    int recovPoint = (int)(basePoint * this.wand.power);
+    int recovPoint = (int)(basePoint * this.getWand().getPower());
     h.setHp(h.getHp() + recovPoint);
     System.out.println(h.getName() + "のHPを" + recovPoint + "回復した！");
   }
 
-  public int    getHp()              { return this.hp; }
-  public void   setHp(int hp)        { 
+  public int    getHp()              {return this.hp;}
+  public void   setHp(int hp)        {
     if (hp < 0) {
       this.hp = 0;
+    } else if (hp >= 0) {
+      this.hp = hp;
     }
-    this.hp = hp; 
   }
-  
-  public int    getMp()              { return this.mp; }
-  public void   setMp(int mp)        { 
+  public int    getMp()              {return this.mp;}
+  public void   setMp(int mp)        {
     if (mp < 0) {
-      this.mp = 0;
+      throw new IllegalArgumentException("MPのエラー");
+    } else if (mp >= 0) {
+      this.mp = mp;
     }
-    this.mp = mp; 
   }
-  
-  public String getName()            { return this.name;}
-  public void   setName(String name) { 
-    if (name == null || name.length() <= 3) {
-      throw new IllegalArgumentException("テス");
-    } 
-    this.name == name;
-  }
-  
-  public Wand   getWond()            { return this.wand}
-  public void   setWond(Wand wond)   { 
-    if (wond == null) {
-      throw new IllegalArgumentException("杖を装備");
+  public String getName()            {return this.name;}
+  public void   setName(String name) {
+    if(name == null || name.length() < 3) {
+      throw new IllegalArgumentException("魔法使いに設定されようとしている名前が異常");
+    } else {
+      this.name = name;
     }
-    this.wand = wand;
   }
-    
-}
+  public Wand   getWand()            {return this.wand;}
+  public void   setWand(Wand wand)   {
+    if (wand == null) {
+      throw new IllegalArgumentException("名前がnull");
+    } else {
+      this.wand = wand;
+    }
+  }
 
+}

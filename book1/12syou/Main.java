@@ -9,6 +9,7 @@ public class Main {
     Character c = w;
     // w.name = "テスト";
     w.attack(m);
+    c.attack(m);
     w.fireball(m);
   }
 }
