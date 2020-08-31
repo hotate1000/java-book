@@ -1,21 +1,24 @@
 public class Account {
   String accountNumber;
-  int balance;
+  int    balance;
 
 
   public String toString() {
-    return "¥" + this.balance + "(口座番号="+ this.accountNumber + ")";
+    return "¥¥" + this.balance + "(口座番号=" + this.balance + ")";
   }
 
-  public boolean epuals (Object o) {
-    if (this == o) { return true; }
-    if (o instanceof Accout) {
-      Account a =(Account)o;
-      String an1 = this.accountNumber.trim();
-      if (an1.equals(an2)) {
+  public boolean equals(Object o) {
+    if(this == o) {return true;}
+
+    if(o instanceof Account) {
+      Account ac = (Account)o;
+      String ac1 = this.accountNumber.trim();
+      String ac2 = ac.accountNumber.trim();
+      if (ac1.equal(ac2)) {
         return true;
       }
     }
     return false;
-  } 
+  }
+
 }
