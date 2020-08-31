@@ -1,24 +1,27 @@
 public class Hero {
   String name;
-  int hp;
+  int    hp;
   static int money;
 
   public String toString() {
-    return "名前：" + this.name + "HP：" + this.hp;
+    return "名前：" + this.name + "/HP：" + this.hp;
   }
 
   public boolean equals(Object o) {
     if(this == o) {return true;}
     if(o instanceof Hero) {
       Hero h = (Hero)o;
-      if(this.name.equals(h.name)){
-        return true;
+      if (this.name.equals(h.name)) {
+        if (this.hp == h.hp) {
+          return true;
+        }
       }
     }
-    return false;
+      return false;
   }
 
-  public static void setRandomMoney(){
-    Hero.money = (int)(Math.random()*1000);
+
+  public static void setRandomMoney() {
+    Hero.money = (int)(Math.random() * 1000);
   }
 }
