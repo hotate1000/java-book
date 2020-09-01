@@ -1,3 +1,8 @@
+import java.util.Date;
+
+import java.util.Calendar;
+import java.util.SimpleDateFormat;
+
 public class Main {
   public static void main(String[] args) {
   // 15-1
@@ -86,7 +91,51 @@ public class Main {
     String w = s157.replaceAll("[beh]","X");
     System.out.println(w);
 
+
+  // 15-10
+    System.out.println("");
+    Date now = new Date();
+    System.out.println(now);
+    System.out.println(now.getTime());
+    Date past = new Date(1600705425827L);
+    // System.out.println(past.setTime(past));
+    
+    System.out.println(past);
+    System.out.println(past.getTime());
+
+    // System.out.println("処理にかかった時間は..." + (end - start) + "ミリ秒でした");
+
+    System.out.println("");
+    Date d = new Date();
+    d.setTime(1600705425827L);
+    d.setTime(1);
+
+    System.out.println(d);
+
+
+  // 15-12
+    Calendar c = Calendar.getInstance();
+    c.set(2019,8,22,1,23,45);
+    c.set(Calendar.MONTH,11);
+    c.set(Calendar.YEAR,2000);
+    Date d1512 = c.getTime();
+    System.out.println(d1512);
+
+    Date d15122 = new Date();
+    c.setTime(now);
+    // System.out.println(c);
+    int y1512 = c.get(Calendar.YEAR);
+    int d151222 = c.get(Calendar.DAY_OF_MONTH);
+    System.out.println("年" + y1512 + "日" + d151222);
+    
+
+  // 15-13
+
   }
+
+
+
+
 
 
   // 15-5
@@ -112,9 +161,4 @@ public class Main {
   public boolean isValidPlayerNames(String name) {
     return name.matches("[A-Z][A-Z0-9]{7}");
   }
-
-
-  // 15-9
-  
-
 }
